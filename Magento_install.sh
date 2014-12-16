@@ -3,7 +3,7 @@
 rpm -ivh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
 yum -y install php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap curl curl-devel
-yum install mysql mysql-server php php-xml php-mcrypt mcrypt gd php-gd php-mysql nginx 
+yum -y install mysql mysql-server php php-xml php-mcrypt mcrypt gd php-gd php-mysql nginx 
 
 cd /usr/share/nginx/html
 
@@ -258,4 +258,7 @@ else
     echo "+=================================================+"
     
     exit
+    
+    service php-fpm restart
+    service nginx restart
 fi
