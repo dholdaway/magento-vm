@@ -184,7 +184,7 @@ else
     echo
     
     ./mage mage-setup .
-    ./mage config-set preferred_state stable`
+    ./mage config-set preferred_state stable
     
     echo
     echo "Installing core extensions..."
