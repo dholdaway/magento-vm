@@ -1,5 +1,11 @@
 #!/bin/bash
 
+rpm -ivh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+yum install mysql mysql-server php php-xml php-mcrypt mcrypt gd php-gd php-mysql nginx 
+
+cd /usr/share/nginx/html
+
 clear
 
 stty erase '^?'
