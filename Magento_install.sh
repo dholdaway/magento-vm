@@ -8,6 +8,10 @@ cd /usr/share/nginx/html
 
 clear
 
+sudo /etc/init.d/mysqld restart
+
+sudo /usr/bin/mysql_secure_installation
+
 stty erase '^?'
     
 echo -n "Database Name: "
@@ -36,8 +40,8 @@ if [[ $SAMPLE_DATA == 'y' || $SAMPLE_DATA == 'Y' ]]; then
     echo "Downloading packages..."
     echo
     
-    wget http://www.magentocommerce.com/index.php/getmagento/1.9.1.0/magento-1.9.1.0.tar.gz
-    wget http://www.magentocommerce.com/downloads/assets/1.9.0.0/magento-sample-data-1.9.0.0.tar.gz
+    wget https://s3-eu-west-1.amazonaws.com/magento-installer19/magento-1.9.1.0.tar.gz
+    wget https://s3-eu-west-1.amazonaws.com/magento-installer19/magento-sample-data-1.9.0.0.tar.gz
     
     echo
     echo "Extracting data..."
@@ -70,6 +74,7 @@ if [[ $SAMPLE_DATA == 'y' || $SAMPLE_DATA == 'Y' ]]; then
     echo "Initializing PEAR registry..."
     echo
     
+    chmod u+x mage
     ./mage mage-setup .
     ./mage config-set preferred_state stable`
     
