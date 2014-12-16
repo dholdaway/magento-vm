@@ -196,7 +196,7 @@ else
     echo "Refreshing indexes..."
     echo
     
-    /usr/local/bin/php -f shell/indexer.php reindexall
+    usr/bin/php -f shell/indexer.php reindexall
     
     echo
     echo "Cleaning up files..."
@@ -209,7 +209,7 @@ else
     echo "Installing Magento..."
     echo
     
-    php-cli -f install.php -- \
+    usr/bin/php -f install.php -- \
     --license_agreement_accepted "yes" \
     --locale "en_US" \
     --timezone "America/Phoenix" \
